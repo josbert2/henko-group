@@ -23,15 +23,15 @@ const Footer = () => {
         <div className="text-center mb-12">
           <Link href="/" className="inline-flex items-center gap-3 group">
             <div className="flex items-center">
-              <div className="bg-gradient-to-br from-gray-900 to-gray-700 p-3 rounded-2xl">
+              <div className="bg-gradient-to-br from-gray-900 to-gray-700 p-3 rounded-2xl transform group-hover:scale-110 transition-transform duration-300">
                   <img 
                   src="https://framerusercontent.com/images/jnuD1MI94Vu45n44bbJ8JUBqts.png" 
-                  alt="logo" 
+                  alt="Henko Group Logo" 
                   className="h-8 w-auto"
                   style={{ filter: 'brightness(0) invert(1)' }}
                   />
               </div>
-              <span className="text-gray-800 text-2xl font-bold ml-2">Henko Group <span className="text-[#FFBC3F]">.</span></span>
+              <span className="text-gray-800 dark:text-white text-2xl font-bold ml-2">Henko Group <span className="text-[#FFBC3F]">.</span></span>
               </div>
           </Link>
         </div>

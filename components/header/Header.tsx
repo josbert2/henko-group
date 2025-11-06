@@ -34,12 +34,11 @@ const Header = () => {
             className="flex items-center gap-2"
           >
             <div className="bg-gradient-to-br from-gray-900 to-gray-700 p-2 rounded-xl">
-              <Image
+              <img
                 alt="Henko Group Logo"
-                src="/logo.svg"
+                src="https://framerusercontent.com/images/jnuD1MI94Vu45n44bbJ8JUBqts.png"
                 className="h-6 w-auto"
-                width={24}
-                height={24}
+                style={{ filter: 'brightness(0) invert(1)' }}
               />
             </div>
             <span className="text-gray-950 dark:text-gray-300 text-xl font-bold hidden md:block">
@@ -93,12 +92,11 @@ const Header = () => {
                       className="inline-flex items-center gap-2"
                     >
                       <div className="bg-gradient-to-br from-gray-900 to-gray-700 p-2 rounded-xl">
-                        <Image
+                        <img
                           alt="Henko Group Logo"
-                          src="/logo.svg"
+                          src="https://framerusercontent.com/images/jnuD1MI94Vu45n44bbJ8JUBqts.png"
                           className="h-6 w-auto"
-                          width={24}
-                          height={24}
+                          style={{ filter: 'brightness(0) invert(1)' }}
                         />
                       </div>
                       <span className="text-xl font-bold tracking-wide text-gray-950 dark:text-gray-300">
