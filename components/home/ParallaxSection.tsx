@@ -138,27 +138,27 @@ export default function ParallaxSection() {
                 
                 {/* Menu Links */}
                 <div className="hidden md:flex items-center gap-8">
-                <a href="#home" className="text-gray-800 hover:text-[#FFBC3F] transition-colors font-medium">
-                    Home
+                <a href="#inicio" className="text-gray-800 hover:text-[#FFBC3F] transition-colors font-medium">
+                    Inicio
                 </a>
-                <a href="#about" className="text-gray-800 hover:text-[#FFBC3F] transition-colors font-medium">
-                    About
+                <a href="#nosotros" className="text-gray-800 hover:text-[#FFBC3F] transition-colors font-medium">
+                    Nosotros
                 </a>
-                <a href="#services" className="text-gray-800 hover:text-[#FFBC3F] transition-colors font-medium">
-                    Services
+                <a href="#servicios" className="text-gray-800 hover:text-[#FFBC3F] transition-colors font-medium">
+                    Servicios
                 </a>
-                <a href="#portfolio" className="text-gray-800 hover:text-[#FFBC3F] transition-colors font-medium">
-                    Portfolio
+                <a href="#portafolio" className="text-gray-800 hover:text-[#FFBC3F] transition-colors font-medium">
+                    Portafolio
                 </a>
-                <a href="#contact" className="text-gray-800 hover:text-[#FFBC3F] transition-colors font-medium">
-                    Contact
+                <a href="#contacto" className="text-gray-800 hover:text-[#FFBC3F] transition-colors font-medium">
+                    Contacto
                 </a>
                 </div>
                 
                 {/* CTA Button */}
                 <div className="flex items-center gap-4">
                 <button className="hidden md:block font-bold px-6 py-2.5 bg-[#FFBC3F] text-gray-900 rounded-full hover:bg-[#ffb020] transition-all font-semibold shadow-md hover:shadow-xl hover:scale-105">
-                    Get Started
+                    Comenzar
                 </button>
                 
                 {/* Mobile Menu Button */}
@@ -180,7 +180,7 @@ export default function ParallaxSection() {
             {/* Texto vertical en el lado izquierdo */}
             <div className="absolute left-8 top-1/2 -translate-y-1/2 -rotate-90 origin-center">
                 <p className="text-sm font-semibold tracking-[0.3em] text-gray-800 whitespace-nowrap">
-                GLOBAL LOGISTICS SOLUTIONS
+                SOLUCIONES LOGÍSTICAS GLOBALES
                 </p>
             </div>
             
@@ -190,7 +190,7 @@ export default function ParallaxSection() {
                 <div className="mb-8">
                 <div className="flex items-start gap-5 mb-3">
                     <h1 className="text-8xl font-black leading-[0.95] text-gray-900 tracking-tight">
-                    Smart
+                    Logística
                     </h1>
                     {/* Badge con ícono de camión */}
                     <div className="bg-white rounded-[28px] px-7 py-4 shadow-xl mt-3 border-2 border-gray-100">
@@ -203,23 +203,23 @@ export default function ParallaxSection() {
                     </div>
                 </div>
                 <h1 className="text-8xl font-black leading-[0.95] text-gray-900 tracking-tight">
-                    logistics
+                    inteligente
                 </h1>
                 <h1 className="text-8xl font-black leading-[0.95] text-gray-900 tracking-tight relative">
-                    company
+                    y eficaz
                     <span className="absolute -right-2 -bottom-2 text-[#FFBC3F] text-9xl">.</span>
                 </h1>
                 </div>
                 
                 {/* Subtítulo con más énfasis */}
                 <p className="text-2xl text-gray-700 mb-10 max-w-xl leading-relaxed font-medium">
-                We deliver your cargo <span className="text-gray-900 font-bold">safely</span> and <span className="text-gray-900 font-bold">on time</span> with cutting-edge tracking technology
+                Entregamos tu carga de forma <span className="text-gray-900 font-bold">segura</span> y <span className="text-gray-900 font-bold">puntual</span> con tecnología de rastreo de última generación
                 </p>
                 
                 {/* Botón CTA con más impacto */}
                 <div className="mb-14">
                 <button className="group bg-gray-900 text-white px-12 py-5 rounded-2xl font-bold text-xl hover:bg-gray-800 transition-all shadow-2xl hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.4)] hover:scale-105 flex items-center gap-4">
-                    Get Started
+                    Comenzar
                     <svg className="w-6 h-6 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="3">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                     </svg>
@@ -230,10 +230,10 @@ export default function ParallaxSection() {
                 <div className="flex items-end gap-8">
                 <div className="border-t-[3px] border-gray-900 pt-5">
                     <div className="text-7xl font-black text-gray-900 leading-none mb-2">4.9</div>
-                    <div className="text-base text-gray-600 font-medium">(32 reviews)</div>
+                    <div className="text-base text-gray-600 font-medium">(32 reseñas)</div>
                 </div>
                 <div className="pb-3">
-                    <div className="text-base font-bold text-gray-900 mb-3">Average Rating</div>
+                    <div className="text-base font-bold text-gray-900 mb-3">Valoración Promedio</div>
                     <div className="flex gap-1.5">
                     {[...Array(5)].map((_, i) => (
                         <svg key={i} className="w-7 h-7 fill-[#FFBC3F] drop-shadow-sm" viewBox="0 0 24 24">
@@ -260,8 +260,18 @@ export default function ParallaxSection() {
                 src="https://framerusercontent.com/images/QBxuhADJzunB3F72kt5qm9wXcec.jpg?scale-down-to=1024&width=3161&height=2048" 
                 alt="image" 
                 />
-                {/* Overlay degradado */}
-                <div className="absolute inset-0 bg-gradient-to-br from-gray-900/40 via-transparent to-[#FFBC3F]/20 rounded-r-[30px]"></div>
+                {/* Overlay degradado animado */}
+                <div className="absolute inset-0 bg-gradient-to-br from-gray-900/40 via-transparent to-[#FFBC3F]/20 rounded-r-[30px] animate-[gradient_8s_ease_infinite]"></div>
+                <style jsx>{`
+                  @keyframes gradient {
+                    0%, 100% {
+                      opacity: 0.8;
+                    }
+                    50% {
+                      opacity: 0.5;
+                    }
+                  }
+                `}</style>
             </div>
             </div>
         </div>
