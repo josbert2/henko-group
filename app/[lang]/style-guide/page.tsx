@@ -148,9 +148,10 @@ export default function StyleGuidePage() {
               <div className="inline-flex items-center gap-3 mb-4">
                 <div className="bg-gradient-to-br from-gray-900 to-gray-700 p-4 rounded-2xl">
                   <img 
-                    src="/logo.svg" 
+                    src="https://framerusercontent.com/images/jnuD1MI94Vu45n44bbJ8JUBqts.png" 
                     alt="Henko Group Logo" 
                     className="h-12 w-auto"
+                    style={{ filter: 'brightness(0) invert(1)' }}
                   />
                 </div>
                 <span className="text-4xl font-bold text-gray-900 dark:text-white">
@@ -162,24 +163,14 @@ export default function StyleGuidePage() {
               {/* Download Buttons */}
               <div className="flex flex-wrap gap-4 justify-center">
                 <a
-                  href="/logo.svg"
-                  download="henko-group-logo.svg"
+                  href="https://framerusercontent.com/images/jnuD1MI94Vu45n44bbJ8JUBqts.png"
+                  download="henko-group-logo.png"
                   className="inline-flex items-center gap-2 bg-gray-900 text-white px-6 py-3 rounded-xl font-semibold hover:bg-gray-800 transition-all shadow-lg hover:shadow-xl hover:scale-105"
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                   </svg>
-                  Descargar SVG
-                </a>
-                <a
-                  href="/logo.png"
-                  download="henko-group-logo.png"
-                  className="inline-flex items-center gap-2 bg-[#FFBC3F] text-gray-900 px-6 py-3 rounded-xl font-semibold hover:bg-[#e5a835] transition-all shadow-lg hover:shadow-xl hover:scale-105"
-                >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                  </svg>
-                  Descargar PNG
+                  Descargar Logo PNG
                 </a>
               </div>
             </div>
@@ -191,7 +182,12 @@ export default function StyleGuidePage() {
                 <div className="bg-gray-50 dark:bg-gray-100 rounded-xl p-8 mb-4">
                   <div className="inline-flex items-center gap-3">
                     <div className="bg-gradient-to-br from-gray-900 to-gray-700 p-3 rounded-xl">
-                      <img src="/logo.svg" alt="Logo" className="h-8 w-auto" />
+                      <img 
+                        src="https://framerusercontent.com/images/jnuD1MI94Vu45n44bbJ8JUBqts.png" 
+                        alt="Henko Group Logo" 
+                        className="h-8 w-auto"
+                        style={{ filter: 'brightness(0) invert(1)' }}
+                      />
                     </div>
                     <span className="text-2xl font-bold text-gray-900">
                       Henko Group<span className="text-[#FFBC3F]">.</span>
@@ -206,7 +202,12 @@ export default function StyleGuidePage() {
                 <div className="bg-gray-900 rounded-xl p-8 mb-4">
                   <div className="inline-flex items-center gap-3">
                     <div className="bg-gradient-to-br from-gray-700 to-gray-600 p-3 rounded-xl">
-                      <img src="/logo.svg" alt="Logo" className="h-8 w-auto" />
+                      <img 
+                        src="https://framerusercontent.com/images/jnuD1MI94Vu45n44bbJ8JUBqts.png" 
+                        alt="Henko Group Logo" 
+                        className="h-8 w-auto"
+                        style={{ filter: 'brightness(0) invert(1)' }}
+                      />
                     </div>
                     <span className="text-2xl font-bold text-white">
                       Henko Group<span className="text-[#FFBC3F]">.</span>
