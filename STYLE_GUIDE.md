@@ -75,21 +75,21 @@ from-gray-900/40 via-transparent to-[#FFBC3F]/20
 
 ### Fuentes
 
-#### Fuente Principal: Inter
-- **Uso**: Todo el contenido general del sitio (párrafos, textos, navegación)
-- **Familia de fuentes**: 
-  ```css
-  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
-  ```
-- **Variable CSS**: `--font-sans`
-
-#### Fuente Secundaria: Space Grotesk
-- **Uso**: Títulos y elementos destacados
+#### Fuente Principal: Space Grotesk
+- **Uso**: Fuente principal del sitio - Títulos, headings y todo el contenido destacado
 - **Familia de fuentes**: 
   ```css
   font-family: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
   ```
 - **Variable CSS**: `--font-space-grotesk`
+
+#### Fuente Secundaria: Inter
+- **Uso**: Texto cuerpo, párrafos y contenido general
+- **Familia de fuentes**: 
+  ```css
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  ```
+- **Variable CSS**: `--font-sans`
 
 ### Pesos de Fuentes
 - Regular: `font-normal` (400)

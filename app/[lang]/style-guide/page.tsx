@@ -117,24 +117,24 @@ export default function StyleGuidePage() {
           <div className="mb-8 bg-gray-50 dark:bg-gray-700/50 rounded-2xl p-6">
             <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">Fuentes Tipográficas</h3>
             
-            {/* Inter - Primary */}
+            {/* Space Grotesk - Primary */}
             <div className="mb-6">
-              <p className="text-lg font-bold text-gray-900 dark:text-white mb-2">Inter (Fuente Principal)</p>
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">Usada para todo el contenido general del sitio</p>
+              <p className="text-lg font-bold text-gray-900 dark:text-white mb-2" style={{ fontFamily: 'var(--font-space-grotesk)' }}>Space Grotesk (Fuente Principal)</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">Fuente principal del sitio - Usada para títulos, headings y todo el contenido destacado</p>
               <div className="bg-gray-900 dark:bg-gray-800 rounded-xl p-4 overflow-x-auto">
                 <code className="text-sm text-gray-300 font-mono">
-                  font-family: &quot;Inter&quot;, ui-sans-serif, system-ui, sans-serif
+                  font-family: &quot;Space Grotesk&quot;, ui-sans-serif, system-ui, sans-serif
                 </code>
               </div>
             </div>
 
-            {/* Space Grotesk - Secondary */}
+            {/* Inter - Secondary */}
             <div className="mb-6">
-              <p className="text-lg font-bold text-gray-900 dark:text-white mb-2" style={{ fontFamily: 'var(--font-space-grotesk)' }}>Space Grotesk (Fuente Secundaria)</p>
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">Usada para títulos y elementos destacados</p>
+              <p className="text-lg font-bold text-gray-900 dark:text-white mb-2">Inter (Fuente Secundaria)</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">Usada para texto cuerpo, párrafos y contenido general</p>
               <div className="bg-gray-900 dark:bg-gray-800 rounded-xl p-4 overflow-x-auto">
                 <code className="text-sm text-gray-300 font-mono">
-                  font-family: &quot;Space Grotesk&quot;, ui-sans-serif, system-ui, sans-serif
+                  font-family: &quot;Inter&quot;, ui-sans-serif, system-ui, sans-serif
                 </code>
               </div>
             </div>
