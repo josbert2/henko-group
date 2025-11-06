@@ -113,6 +113,50 @@ export default function StyleGuidePage() {
             <span className="text-[#FFBC3F]">🔤</span> Tipografía
           </h2>
           
+          {/* Font Family Info */}
+          <div className="mb-8 bg-gray-50 dark:bg-gray-700/50 rounded-2xl p-6">
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">Fuentes Tipográficas</h3>
+            
+            {/* Inter - Primary */}
+            <div className="mb-6">
+              <p className="text-lg font-bold text-gray-900 dark:text-white mb-2">Inter (Fuente Principal)</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">Usada para todo el contenido general del sitio</p>
+              <div className="bg-gray-900 dark:bg-gray-800 rounded-xl p-4 overflow-x-auto">
+                <code className="text-sm text-gray-300 font-mono">
+                  font-family: &quot;Inter&quot;, ui-sans-serif, system-ui, sans-serif
+                </code>
+              </div>
+            </div>
+
+            {/* Space Grotesk - Secondary */}
+            <div className="mb-6">
+              <p className="text-lg font-bold text-gray-900 dark:text-white mb-2" style={{ fontFamily: 'var(--font-space-grotesk)' }}>Space Grotesk (Fuente Secundaria)</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">Usada para títulos y elementos destacados</p>
+              <div className="bg-gray-900 dark:bg-gray-800 rounded-xl p-4 overflow-x-auto">
+                <code className="text-sm text-gray-300 font-mono">
+                  font-family: &quot;Space Grotesk&quot;, ui-sans-serif, system-ui, sans-serif
+                </code>
+              </div>
+            </div>
+            <div className="mt-4 flex flex-wrap gap-2">
+              <span className="px-3 py-1 bg-white dark:bg-gray-600 rounded-full text-sm font-medium text-gray-700 dark:text-gray-200">
+                Regular (400)
+              </span>
+              <span className="px-3 py-1 bg-white dark:bg-gray-600 rounded-full text-sm font-medium text-gray-700 dark:text-gray-200">
+                Medium (500)
+              </span>
+              <span className="px-3 py-1 bg-white dark:bg-gray-600 rounded-full text-sm font-semibold text-gray-700 dark:text-gray-200">
+                Semibold (600)
+              </span>
+              <span className="px-3 py-1 bg-white dark:bg-gray-600 rounded-full text-sm font-bold text-gray-700 dark:text-gray-200">
+                Bold (700)
+              </span>
+              <span className="px-3 py-1 bg-white dark:bg-gray-600 rounded-full text-sm font-black text-gray-700 dark:text-gray-200">
+                Black (900)
+              </span>
+            </div>
+          </div>
+
           <div className="space-y-6">
             <div className="border-l-4 border-[#FFBC3F] pl-6">
               <h1 className="text-6xl font-black text-gray-900 dark:text-white mb-2">H1 - Hero Principal</h1>

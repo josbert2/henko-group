@@ -74,13 +74,29 @@ from-gray-900/40 via-transparent to-[#FFBC3F]/20
 ## 🔤 Tipografía
 
 ### Fuentes
-- **Fuente Principal**: System Font Stack (default de Tailwind)
-- **Peso de Fuentes**:
-  - Regular: `font-normal` (400)
-  - Medium: `font-medium` (500)
-  - Semibold: `font-semibold` (600)
-  - Bold: `font-bold` (700)
-  - Black: `font-black` (900)
+
+#### Fuente Principal: Inter
+- **Uso**: Todo el contenido general del sitio (párrafos, textos, navegación)
+- **Familia de fuentes**: 
+  ```css
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  ```
+- **Variable CSS**: `--font-sans`
+
+#### Fuente Secundaria: Space Grotesk
+- **Uso**: Títulos y elementos destacados
+- **Familia de fuentes**: 
+  ```css
+  font-family: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  ```
+- **Variable CSS**: `--font-space-grotesk`
+
+### Pesos de Fuentes
+- Regular: `font-normal` (400)
+- Medium: `font-medium` (500)
+- Semibold: `font-semibold` (600)
+- Bold: `font-bold` (700)
+- Black: `font-black` (900)
 
 ### Jerarquía de Títulos
 
