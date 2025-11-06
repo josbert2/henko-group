@@ -143,18 +143,105 @@ export default function StyleGuidePage() {
           </h2>
           
           <div className="flex flex-col items-center gap-8">
+            {/* Logo Display */}
             <div className="text-center">
               <div className="inline-flex items-center gap-3 mb-4">
-                <div className="w-16 h-16 bg-gray-900 dark:bg-white rounded-xl flex items-center justify-center">
-                  <svg className="w-10 h-10 text-[#FFBC3F]" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
-                  </svg>
+                <div className="bg-gradient-to-br from-gray-900 to-gray-700 p-4 rounded-2xl">
+                  <img 
+                    src="/logo.svg" 
+                    alt="Henko Group Logo" 
+                    className="h-12 w-auto"
+                  />
                 </div>
                 <span className="text-4xl font-bold text-gray-900 dark:text-white">
                   Henko Group<span className="text-[#FFBC3F]">.</span>
                 </span>
               </div>
-              <p className="text-gray-600 dark:text-gray-400">Logo con icono y marca textual</p>
+              <p className="text-gray-600 dark:text-gray-400 mb-6">Logo oficial de Henko Group con gradiente</p>
+              
+              {/* Download Buttons */}
+              <div className="flex flex-wrap gap-4 justify-center">
+                <a
+                  href="/logo.svg"
+                  download="henko-group-logo.svg"
+                  className="inline-flex items-center gap-2 bg-gray-900 text-white px-6 py-3 rounded-xl font-semibold hover:bg-gray-800 transition-all shadow-lg hover:shadow-xl hover:scale-105"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                  </svg>
+                  Descargar SVG
+                </a>
+                <a
+                  href="/logo.png"
+                  download="henko-group-logo.png"
+                  className="inline-flex items-center gap-2 bg-[#FFBC3F] text-gray-900 px-6 py-3 rounded-xl font-semibold hover:bg-[#e5a835] transition-all shadow-lg hover:shadow-xl hover:scale-105"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                  </svg>
+                  Descargar PNG
+                </a>
+              </div>
+            </div>
+
+            {/* Logo Variations */}
+            <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+              <div className="border-2 border-gray-200 dark:border-gray-700 rounded-2xl p-6 text-center">
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">Logo sobre fondo claro</h3>
+                <div className="bg-gray-50 dark:bg-gray-100 rounded-xl p-8 mb-4">
+                  <div className="inline-flex items-center gap-3">
+                    <div className="bg-gradient-to-br from-gray-900 to-gray-700 p-3 rounded-xl">
+                      <img src="/logo.svg" alt="Logo" className="h-8 w-auto" />
+                    </div>
+                    <span className="text-2xl font-bold text-gray-900">
+                      Henko Group<span className="text-[#FFBC3F]">.</span>
+                    </span>
+                  </div>
+                </div>
+                <p className="text-sm text-gray-600 dark:text-gray-400">Uso recomendado en fondos claros</p>
+              </div>
+
+              <div className="border-2 border-gray-200 dark:border-gray-700 rounded-2xl p-6 text-center">
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">Logo sobre fondo oscuro</h3>
+                <div className="bg-gray-900 rounded-xl p-8 mb-4">
+                  <div className="inline-flex items-center gap-3">
+                    <div className="bg-gradient-to-br from-gray-700 to-gray-600 p-3 rounded-xl">
+                      <img src="/logo.svg" alt="Logo" className="h-8 w-auto" />
+                    </div>
+                    <span className="text-2xl font-bold text-white">
+                      Henko Group<span className="text-[#FFBC3F]">.</span>
+                    </span>
+                  </div>
+                </div>
+                <p className="text-sm text-gray-600 dark:text-gray-400">Uso recomendado en fondos oscuros</p>
+              </div>
+            </div>
+
+            {/* Logo Usage Guidelines */}
+            <div className="w-full bg-gray-50 dark:bg-gray-700/50 rounded-2xl p-6">
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">Guías de Uso del Logo</h3>
+              <ul className="space-y-2 text-gray-600 dark:text-gray-400">
+                <li className="flex items-start gap-2">
+                  <span className="text-green-500 mt-1">✓</span>
+                  <span>Usar siempre con el gradiente negro (from-gray-900 to-gray-700)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-500 mt-1">✓</span>
+                  <span>Mantener el punto dorado (#FFBC3F) en el texto &quot;Henko Group.&quot;</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-500 mt-1">✓</span>
+                  <span>Respetar el espaciado mínimo alrededor del logo</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-red-500 mt-1">✗</span>
+                  <span>No distorsionar las proporciones del logo</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-red-500 mt-1">✗</span>
+                  <span>No cambiar los colores del gradiente o del punto</span>
+                </li>
+              </ul>
             </div>
           </div>
         </section>
