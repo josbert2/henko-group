@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 
 // Declaración de tipo para dotlottie-player
 declare global {
@@ -9,6 +10,172 @@ declare global {
       'dotlottie-player': any;
     }
   }
+}
+
+// Componente Carousel para el Hero
+function HeroCarousel() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [progress, setProgress] = useState(0);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const progressIntervalRef = useRef<NodeJS.Timeout | null>(null);
+
+  const slides = [
+    {
+      id: 1,
+      image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070',
+      alt: 'Almacenaje y distribución',
+      badge: 'Almacenaje • Distribución • Preparación',
+      title: 'Gestión integral en',
+      highlight: 'centros propios y de clientes',
+    },
+    {
+      id: 2,
+      image: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=2070',
+      alt: 'Transporte especializado',
+      badge: 'Caja Seca • Refrigerada • Plataformas',
+      title: 'Flota especializada para',
+      highlight: 'todo tipo de carga',
+    },
+    {
+      id: 3,
+      image: 'https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?q=80&w=2065',
+      alt: 'Gestión logística',
+      badge: 'Compromiso • Innovación • Excelencia',
+      title: 'Optimizando cada etapa de tu',
+      highlight: 'cadena de suministro',
+    },
+  ];
+
+  const SLIDE_DURATION = 5000; // 5 segundos por slide
+  const PROGRESS_INTERVAL = 50; // Actualizar progreso cada 50ms
+
+  useEffect(() => {
+    startSlideTimer();
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+      if (progressIntervalRef.current) clearInterval(progressIntervalRef.current);
+    };
+  }, [currentSlide]);
+
+  const startSlideTimer = () => {
+    // Limpiar intervalos anteriores
+    if (intervalRef.current) clearInterval(intervalRef.current);
+    if (progressIntervalRef.current) clearInterval(progressIntervalRef.current);
+
+    // Resetear progreso
+    setProgress(0);
+
+    // Progreso suave
+    let currentProgress = 0;
+    progressIntervalRef.current = setInterval(() => {
+      currentProgress += (PROGRESS_INTERVAL / SLIDE_DURATION) * 100;
+      if (currentProgress >= 100) {
+        currentProgress = 100;
+      }
+      setProgress(currentProgress);
+    }, PROGRESS_INTERVAL);
+
+    // Cambiar slide
+    intervalRef.current = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, SLIDE_DURATION);
+  };
+
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index);
+  };
+
+  return (
+    <div className="relative h-full w-full">
+      {/* Slides */}
+      <div className="relative h-[120vh] w-full">
+        {slides.map((slide, index) => (
+          <div
+            key={slide.id}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
+            }`}
+          >
+            <Image
+              src={slide.image}
+              alt={slide.alt}
+              fill
+              className="object-cover rounded-r-[30px]"
+              priority={index === 0}
+            />
+            {/* Overlay degradado */}
+            <div className="absolute inset-0 bg-gradient-to-br from-gray-900/40 via-transparent to-[#FFBC3F]/20 rounded-r-[30px]"></div>
+          </div>
+        ))}
+      </div>
+
+      {/* Overlay con mensaje dinámico centrado */}
+      <div className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
+        <div className="max-w-2xl mx-auto px-8 text-center">
+          <div 
+            key={`badge-${currentSlide}`}
+            className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full border border-white/20 mb-6 animate-fade-in-up"
+          >
+            <div className="w-2 h-2 rounded-full bg-[#FFBC3F] animate-pulse"></div>
+            <span className="text-white text-sm font-semibold tracking-wide">
+              {slides[currentSlide].badge}
+            </span>
+          </div>
+          <h3 
+            key={`title-${currentSlide}`}
+            className="text-white text-3xl md:text-4xl font-bold leading-tight drop-shadow-2xl animate-fade-in-up"
+            style={{ animationDelay: '100ms' }}
+          >
+            {slides[currentSlide].title}{' '}
+            <span className="text-[#FFBC3F]">{slides[currentSlide].highlight}</span>
+          </h3>
+        </div>
+      </div>
+
+      <style jsx>{`
+        @keyframes fade-in-up {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-fade-in-up {
+          animation: fade-in-up 0.6s ease-out forwards;
+        }
+      `}</style>
+
+      {/* Progress Dots */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex gap-3">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => goToSlide(index)}
+            className="group relative"
+            aria-label={`Ir a slide ${index + 1}`}
+          >
+            {/* Background del dot */}
+            <div className="w-12 h-1.5 bg-white/30 rounded-full overflow-hidden backdrop-blur-sm">
+              {/* Barra de progreso */}
+              {index === currentSlide && (
+                <div
+                  className="h-full bg-[#FFBC3F] transition-all duration-100 ease-linear rounded-full"
+                  style={{ width: `${progress}%` }}
+                ></div>
+              )}
+              {/* Estado completado */}
+              {index < currentSlide && (
+                <div className="h-full bg-[#FFBC3F] w-full rounded-full"></div>
+              )}
+            </div>
+          </button>
+        ))}
+      </div>
+    </div>
+  );
 }
 
 export default function ParallaxSection() {
@@ -87,7 +254,7 @@ export default function ParallaxSection() {
       targetScrollY = Math.max(0, Math.min(maxScroll, targetScrollY));
       
       // Interpolar hacia el target (factor más bajo = más suave)
-      currentScrollY = lerp(currentScrollY, targetScrollY, 0.06);
+      currentScrollY = lerp(currentScrollY, targetScrollY, 0.09);
       
       // Aplicar el scroll
       window.scrollTo(0, currentScrollY);
@@ -134,189 +301,167 @@ export default function ParallaxSection() {
   }, []);
 
   return (
-    <div ref={containerRef} className="w-full h-screen p-3 rounded-[30px] relative">
-        <div className={`${isHeaderSticky ? 'fixed top-0' : 'absolute top-0'} left-0 w-full px-5 py-5 z-50 transition-all duration-500 ease-in-out`}>
-            <nav className={`bg-white/95 backdrop-blur-md rounded-[30px] px-4 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] transition-all duration-300 ${isHeaderSticky ? 'py-2 shadow-2xl' : 'py-3'}`}>
-            <div className="flex items-center justify-between">
-                {/* Logo */}
-                <div className="flex items-center">
-                <div className="bg-gradient-to-br from-gray-900 to-gray-700 p-3 rounded-2xl">
-                    <img 
-                    src="https://framerusercontent.com/images/jnuD1MI94Vu45n44bbJ8JUBqts.png" 
-                    alt="logo" 
-                    className="h-8 w-auto"
-                    style={{ filter: 'brightness(0) invert(1)' }}
-                    />
-                </div>
-                <span className="text-gray-800 text-2xl font-bold ml-2">Henko Group <span className="text-[#FFBC3F]">.</span></span>
-                </div>
-                
-                {/* Menu Links */}
-                <div className="hidden md:flex items-center gap-8">
-                <a href="#inicio" className="text-gray-800 hover:text-[#FFBC3F] transition-colors font-medium">
-                    Inicio
-                </a>
-                <a href="#nosotros" className="text-gray-800 hover:text-[#FFBC3F] transition-colors font-medium">
-                    Nosotros
-                </a>
-                <a href="#servicios" className="text-gray-800 hover:text-[#FFBC3F] transition-colors font-medium">
-                    Servicios
-                </a>
-                <a href="#portafolio" className="text-gray-800 hover:text-[#FFBC3F] transition-colors font-medium">
-                    Portafolio
-                </a>
-                <a href="#contacto" className="text-gray-800 hover:text-[#FFBC3F] transition-colors font-medium">
-                    Contacto
-                </a>
-                </div>
-                
-                {/* CTA Button */}
-                <div className="flex items-center gap-4">
-                <button className="hidden md:block font-bold px-6 py-2.5 bg-[#FFBC3F] text-gray-900 rounded-full hover:bg-[#ffb020] transition-all font-semibold shadow-md hover:shadow-xl hover:scale-105">
-                    Comenzar
-                </button>
-                
-                {/* Mobile Menu Button */}
-                <button className="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                </button>
-                </div>
-            </div>
-            </nav>
-        </div>
-        <div className="grid grid-cols-2 h-full">
-            <div className="relative py-20 px-16">
-            <div className="bg absolute h-full w-full top-0 left-0">
-                <img className="rounded-l-[30px] h-full w-full object-cover" src="https://crowdytheme.com/html/arolax/assets/imgs/shape/img-s-52.webp" alt="image" />
-            </div>
-            
-            {/* Texto vertical en el lado izquierdo */}
-            <div className="absolute left-8 top-1/2 -translate-y-1/2 -rotate-90 origin-center">
-                <p className="text-sm font-semibold tracking-[0.3em] text-gray-800 whitespace-nowrap">
-                SOLUCIONES LOGÍSTICAS GLOBALES
-                </p>
-            </div>
-            
-            {/* Contenido principal del hero */}
-            <div className='flex flex-col justify-center h-full z-10 relative max-w-3xl'>
-                {/* Título principal con badge */}
-                <div className="mb-8">
-                <div className="flex items-start gap-5 mb-3">
-                    <h1 className="text-8xl font-black leading-[0.95] text-gray-900 tracking-tight">
-                    Logística
-                    </h1>
-                    {/* Badge con ícono de camión */}
-                    <div className="bg-white rounded-[28px] px-7 py-4 shadow-xl mt-3 border-2 border-gray-100">
-                    <svg className="w-12 h-12 stroke-gray-900" viewBox="0 0 24 24" fill="none" strokeWidth="2.5">
-                        <rect x="1" y="3" width="15" height="13"></rect>
-                        <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
-                        <circle cx="5.5" cy="18.5" r="2.5"></circle>
-                        <circle cx="18.5" cy="18.5" r="2.5"></circle>
-                    </svg>
-                    </div>
-                </div>
-                <h1 className="text-8xl font-black leading-[0.95] text-gray-900 tracking-tight">
-                    inteligente
-                </h1>
-                <h1 className="text-8xl font-black leading-[0.95] text-gray-900 tracking-tight relative">
-                    y eficaz
-                    <span className="absolute -right-2 -bottom-2 text-[#FFBC3F] text-9xl">.</span>
-                </h1>
-                </div>
-                
-                {/* Subtítulo con más énfasis */}
-                <p className="text-2xl text-gray-700 mb-10 max-w-xl leading-relaxed font-medium">
-                Entregamos tu carga de forma <span className="text-gray-900 font-bold">segura</span> y <span className="text-gray-900 font-bold">puntual</span> con tecnología de rastreo de última generación
-                </p>
-                
-                {/* Botón CTA con más impacto */}
-                <div className="mb-14">
-                <button className="group bg-gray-900 text-white px-12 py-5 rounded-2xl font-bold text-xl hover:bg-gray-800 transition-all shadow-2xl hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.4)] hover:scale-105 flex items-center gap-4">
-                    Comenzar
-                    <svg className="w-6 h-6 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="3">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                    </svg>
-                </button>
-                </div>
-                
-                {/* Rating section con más destaque */}
-                <div className="flex items-end gap-8">
-                <div className="border-t-[3px] border-gray-900 pt-5">
-                    <div className="text-7xl font-black text-gray-900 leading-none mb-2">4.9</div>
-                    <div className="text-base text-gray-600 font-medium">(32 reseñas)</div>
-                </div>
-                <div className="pb-3">
-                    <div className="text-base font-bold text-gray-900 mb-3">Valoración Promedio</div>
-                    <div className="flex gap-1.5">
-                    {[...Array(5)].map((_, i) => (
-                        <svg key={i} className="w-7 h-7 fill-[#FFBC3F] drop-shadow-sm" viewBox="0 0 24 24">
-                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                        </svg>
-                    ))}
-                    </div>
-                </div>
-                </div>
-            </div>
-            
-            
-            </div>
-            <div className="overflow-hidden rounded-r-[30px]">
-            <div className="thumb relative h-full">
-                <img 
-                ref={parallaxRef}
-                className="rounded-r-[30px] h-[120vh] w-full object-cover"
-                style={{
-                    willChange: 'transform',
-                    transformStyle: 'preserve-3d',
-                    backfaceVisibility: 'hidden',
-                }}
-                src="https://framerusercontent.com/images/QBxuhADJzunB3F72kt5qm9wXcec.jpg?scale-down-to=1024&width=3161&height=2048" 
-                alt="image" 
-                />
-                {/* Overlay degradado animado */}
-                <div className="absolute inset-0 bg-gradient-to-br from-gray-900/40 via-transparent to-[#FFBC3F]/20 rounded-r-[30px] animate-[gradient_8s_ease_infinite]"></div>
-                <style jsx>{`
-                  @keyframes gradient {
-                    0%, 100% {
-                      opacity: 0.8;
-                    }
-                    50% {
-                      opacity: 0.5;
-                    }
-                  }
-                `}</style>
-            </div>
-            </div>
-        </div>
-        {/* Lottie Animation en el bottom center */}
-        <div className="absolute bottom-[12px] left-1/2 -translate-x-1/2 z-20">
-            <div className="relative w-[140px] h-[29px]">
-                <div className="absolute inset-0 rounded-[inherit]">
-                <img
-                    decoding="auto"
-                    width="140"
-                    height="29"
-                    src="https://framerusercontent.com/images/FNO18dtlrdhmT5ftwXwHu9MVs94.svg?width=140&height=29"
-                    alt=""
-                    className="block w-full h-full rounded-[inherit] object-contain"
-                />
-                </div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                <div className="rotate-[-90deg] w-full h-full">
-                    <dotlottie-player
-                    src="https://framerusercontent.com/assets/Ox8ASNQ1btRMbSiuh4KfSho9wM.json"
-                    autoplay
-                    loop
-                    speed="1"
-                    direction="1"
-                    style={{ height: '100%', width: '100%' }}
-                    />
-                </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <>
+      <div ref={containerRef} className="w-full h-screen p-3 rounded-[30px] relative">
+          <div className={`${isHeaderSticky ? 'absolute top-0' : 'absolute top-0'} left-0 w-full px-5 py-5 z-50 transition-all duration-500 ease-in-out`}>
+              <nav className={`bg-white/95 backdrop-blur-md rounded-[30px] px-4 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] transition-all duration-300 ${isHeaderSticky ? 'py-2 shadow-2xl' : 'py-3'}`}>
+              <div className="flex items-center justify-between">
+                  {/* Logo */}
+                  <div className="flex items-center">
+                  <div className="bg-gradient-to-br from-gray-900 to-gray-700 p-3 rounded-2xl">
+                      <img 
+                      src="https://framerusercontent.com/images/jnuD1MI94Vu45n44bbJ8JUBqts.png" 
+                      alt="logo" 
+                      className="h-8 w-auto"
+                      style={{ filter: 'brightness(0) invert(1)' }}
+                      />
+                  </div>
+                  <span className="text-gray-800 text-2xl font-bold ml-2">Henko Group <span className="text-[#FFBC3F]">.</span></span>
+                  </div>
+                  
+                  {/* Menu Links */}
+                  <div className="hidden md:flex items-center gap-8">
+                  <a href="#inicio" className="text-gray-800 hover:text-[#FFBC3F] transition-colors font-medium">
+                      Inicio
+                  </a>
+                  <a href="#nosotros" className="text-gray-800 hover:text-[#FFBC3F] transition-colors font-medium">
+                      Nosotros
+                  </a>
+                  <a href="#servicios" className="text-gray-800 hover:text-[#FFBC3F] transition-colors font-medium">
+                      Servicios
+                  </a>
+                  <a href="#portafolio" className="text-gray-800 hover:text-[#FFBC3F] transition-colors font-medium">
+                      Portafolio
+                  </a>
+                  <a href="#contacto" className="text-gray-800 hover:text-[#FFBC3F] transition-colors font-medium">
+                      Contacto
+                  </a>
+                  </div>
+                  
+                  {/* CTA Button */}
+                  <div className="flex items-center gap-4">
+                  <button className="hidden md:block font-bold px-6 py-2.5 bg-[#FFBC3F] text-gray-900 rounded-full hover:bg-[#ffb020] transition-all font-semibold shadow-md hover:shadow-xl hover:scale-105">
+                      Comenzar
+                  </button>
+                  
+                  {/* Mobile Menu Button */}
+                  <button className="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors">
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                      </svg>
+                  </button>
+                  </div>
+              </div>
+              </nav>
+          </div>
+          <div className="grid grid-cols-2 h-full">
+              <div className="absolute -left-24 top-1/2 -translate-y-1/2 -rotate-90 origin-center z-10">
+                  <p className="text-sm font-semibold tracking-[0.3em] text-gray-800 whitespace-nowrap">
+                  SOLUCIONES LOGÍSTICAS GLOBALES
+                  </p>
+              </div>
+              <div className="relative py-20 px-16">
+          
+              <div className="bg absolute h-full w-full top-0 left-0">
+                  <img className="rounded-l-[30px] h-full w-full object-cover" src="https://crowdytheme.com/html/arolax/assets/imgs/shape/img-s-52.webp" alt="image" />
+              </div>
+              
+              {/* Texto vertical en el lado izquierdo */}
+              
+              
+              {/* Contenido principal del hero */}
+              <div className='flex flex-col justify-center h-full z-10 relative max-w-3xl pl-20'>
+                  {/* Título principal con badge */}
+                  <div className="mb-8">
+                  <div className="flex items-start gap-5 mb-3">
+                      <h1 className="text-8xl font-black leading-[0.95] text-gray-900 tracking-tight">
+                      Tu socio
+                      </h1>
+                      
+                  </div>
+                  <h1 className="text-8xl font-black leading-[0.95] text-gray-900 tracking-tight">
+                      logístico
+                  </h1>
+                  <h1 className="text-8xl font-black leading-[0.95] text-gray-900 tracking-tight relative">
+                      líder en Chile
+                      <span className="absolute -right-2 -bottom-2 text-[#FFBC3F] text-9xl">.</span>
+                  </h1>
+                  </div>
+                  
+                  {/* Subtítulo con más énfasis */}
+                  <p className="text-2xl text-gray-700 mb-10 max-w-xl leading-relaxed font-medium">
+                  Soluciones logísticas <span className="text-gray-900 font-bold">integrales</span> y <span className="text-gray-900 font-bold">personalizadas</span> que impulsan el crecimiento de tu negocio con excelencia operativa
+                  </p>
+                  
+                  {/* Botón CTA con más impacto */}
+                  <div className="mb-14">
+                  <button className="group bg-gray-900 text-white px-12 py-5 rounded-2xl font-bold text-xl hover:bg-gray-800 transition-all shadow-2xl hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.4)] hover:scale-105 flex items-center gap-4">
+                      Solicitar Cotización
+                      <svg className="w-6 h-6 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="3">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                      </svg>
+                  </button>
+                  </div>
+                  
+                  {/* Valores clave de HENKO */}
+                  <div className="grid grid-cols-3 gap-8 max-w-2xl">
+                  <div className="border-l-4 border-[#FFBC3F] pl-4">
+                      <div className="text-4xl font-black text-gray-900 leading-none mb-2">24/7</div>
+                      <div className="text-sm text-gray-600 font-medium">Operación continua</div>
+                  </div>
+                  <div className="border-l-4 border-[#FFBC3F] pl-4">
+                      <div className="text-4xl font-black text-gray-900 leading-none mb-2">100%</div>
+                      <div className="text-sm text-gray-600 font-medium">Rastreo en tiempo real</div>
+                  </div>
+                  <div className="border-l-4 border-[#FFBC3F] pl-4">
+                      <div className="text-4xl font-black text-gray-900 leading-none mb-2">+15</div>
+                      <div className="text-sm text-gray-600 font-medium">Años de experiencia</div>
+                  </div>
+                  </div>
+              </div>
+              
+              
+              </div>
+              <div className="overflow-hidden rounded-r-[30px] relative">
+              <HeroCarousel />
+              </div>
+          </div>
+          {/* Lottie Animation en el bottom center */}
+          <div className="absolute bottom-[12px] left-1/2 -translate-x-1/2 z-20">
+              <div className="relative w-[140px] h-[29px]">
+                  <div className="absolute inset-0 rounded-[inherit]">
+                  <img
+                      decoding="auto"
+                      width="140"
+                      height="29"
+                      src="https://framerusercontent.com/images/FNO18dtlrdhmT5ftwXwHu9MVs94.svg?width=140&height=29"
+                      alt=""
+                      className="block w-full h-full rounded-[inherit] object-contain"
+                  />
+                  </div>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="rotate-[-90deg] w-full h-full">
+                      <dotlottie-player
+                      src="https://framerusercontent.com/assets/Ox8ASNQ1btRMbSiuh4KfSho9wM.json"
+                      autoplay
+                      loop
+                      speed="1"
+                      direction="1"
+                      style={{ height: '100%', width: '100%' }}
+                      />
+                  </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <section>
+          <div className='flex flex-col items-center py-7 pt-16 px-5'>
+              <div className='flex items-center gap-2 flex-tag '>
+                <div className='bullet-tag'></div>
+                <div className="title-tag">Nuestros servicios</div>
+              </div>
+          </div>
+      </section>
+    </>
   );
 }

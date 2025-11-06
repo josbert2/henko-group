@@ -29,19 +29,21 @@ const Header = () => {
         <div className="flex items-center md:gap-x-12 flex-1">
           <Link
             href="/"
-            aria-label="Landing Page Boilerplate"
-            title="Landing Page Boilerplate"
-            className="flex items-center space-x-1 font-bold"
+            aria-label="Henko Group"
+            title="Henko Group"
+            className="flex items-center gap-2"
           >
-            <Image
-              alt="Logo"
-              src="/logo.svg"
-              className="w-8 h-8"
-              width={32}
-              height={32}
-            />
-            <span className="text-gray-950 dark:text-gray-300 hidden md:block">
-              {siteConfig.name}
+            <div className="bg-gradient-to-br from-gray-900 to-gray-700 p-2 rounded-xl">
+              <Image
+                alt="Henko Group Logo"
+                src="/logo.svg"
+                className="h-6 w-auto"
+                width={24}
+                height={24}
+              />
+            </div>
+            <span className="text-gray-950 dark:text-gray-300 text-xl font-bold hidden md:block">
+              Henko Group<span className="text-[#FFBC3F]">.</span>
             </span>
           </Link>
         </div>
@@ -86,19 +88,21 @@ const Header = () => {
                   <div>
                     <Link
                       href="/"
-                      aria-label="Landing Page Boilerplate"
-                      title="Landing Page Boilerplate"
-                      className="inline-flex items-center"
+                      aria-label="Henko Group"
+                      title="Henko Group"
+                      className="inline-flex items-center gap-2"
                     >
-                      <Image
-                        alt={siteConfig.name}
-                        src="/logo.svg"
-                        className="w-8 h-8"
-                        width={32}
-                        height={32}
-                      />
-                      <span className="ml-2 text-xl font-bold tracking-wide text-gray-950 dark:text-gray-300">
-                        {siteConfig.name}
+                      <div className="bg-gradient-to-br from-gray-900 to-gray-700 p-2 rounded-xl">
+                        <Image
+                          alt="Henko Group Logo"
+                          src="/logo.svg"
+                          className="h-6 w-auto"
+                          width={24}
+                          height={24}
+                        />
+                      </div>
+                      <span className="text-xl font-bold tracking-wide text-gray-950 dark:text-gray-300">
+                        Henko Group<span className="text-[#FFBC3F]">.</span>
                       </span>
                     </Link>
                   </div>

@@ -13,8 +13,8 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
  
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 45 100% 62%;
+    --primary-foreground: 222.2 47.4% 11.2%;
  
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -22,7 +22,7 @@
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
  
-    --accent: 210 40% 96.1%;
+    --accent: 45 100% 62%;
     --accent-foreground: 222.2 47.4% 11.2%;
  
     --destructive: 0 84.2% 60.2%;
@@ -33,6 +33,9 @@
     --ring: 222.2 84% 4.9%;
  
     --radius: 0.5rem;
+
+    --main-color: #FFBC3F;
+    --secondary-color: #ffbc3f2b;
   }
  
   .dark {
@@ -95,4 +98,23 @@ h5 {
 }
 h6 {
   @apply text-base sm:text-xl text-slate-900 dark:text-gray-200 leading-[1.625] font-semibold mb-2
+}
+
+
+.bullet-tag{
+  border-radius: 100px;
+  width: 8px;
+  height: 8px;
+  background-color: var(--main-color);
+}
+
+.flex-tag {
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
+  background-color: #ffbc3f2b;
+  border-radius: 8px;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 8px 13px 8px 10px;
+  display: flex;
 }

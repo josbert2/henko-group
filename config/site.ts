@@ -6,27 +6,38 @@ import { SiBuymeacoffee, SiJuejin } from "react-icons/si";
 const OPEN_SOURCE_URL = 'https://github.com/weijunext/landing-page-boilerplate'
 
 const baseSiteConfig = {
-  name: "Landing page boilerplate",
+  name: "HENKO GRUP SPA",
   description:
-    "A free, open-source, and powerful landing page boilerplate, ideal for various projects, enabling you to create a landing page in under an hour.",
-  url: "https://landingpage.weijunext.com",
-  ogImage: "https://landingpage.weijunext.com/og.png",
+    "Soluciones logísticas integrales, eficientes y personalizadas. Tu socio logístico líder en Chile con operación 24/7, rastreo en tiempo real y más de 15 años de experiencia en almacenaje, distribución y transporte especializado.",
+  url: "https://henkogroup.cl",
+  ogImage: "https://henkogroup.cl/og.png",
   metadataBase: '/',
-  keywords: ["landing page boilerplate", "landing page template", "awesome landing page", "next.js landing page"],
+  keywords: [
+    "logística Chile",
+    "transporte especializado",
+    "almacenaje y distribución",
+    "gestión logística",
+    "cadena de suministro",
+    "HENKO",
+    "soluciones logísticas",
+    "transporte refrigerado",
+    "rastreo en tiempo real",
+    "operación logística 24/7"
+  ],
   authors: [
     {
-      name: "weijunext",
-      url: "https://weijunext.com",
-      twitter: 'https://twitter.com/weijunext',
+      name: "HENKO GRUP SPA",
+      url: "https://henkogroup.cl",
+      twitter: 'https://twitter.com/henkogroup',
     }
   ],
-  creator: '@weijunext',
+  creator: '@henkogroup',
   openSourceURL: 'https://github.com/weijunext/landing-page-boilerplate',
   themeColors: [
     { media: '(prefers-color-scheme: light)', color: 'white' },
     { media: '(prefers-color-scheme: dark)', color: 'black' },
   ],
-  nextThemeColor: 'dark', // next-theme option: system | dark | light
+  nextThemeColor: 'light', // next-theme option: system | dark | light
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon-16x16.png",
@@ -58,7 +69,7 @@ export const siteConfig: SiteConfig = {
   ...baseSiteConfig,
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "es_CL",
     url: baseSiteConfig.url,
     title: baseSiteConfig.name,
     images: [`${baseSiteConfig.url}/og.png`],

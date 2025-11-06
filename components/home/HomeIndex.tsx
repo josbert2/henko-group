@@ -1,4 +1,5 @@
 import ParallaxSection from '@/components/home/ParallaxSection';
+import Services from '@/components/home/Services';
 import CTA from "@/components/home/CTA";
 import FAQ from "@/components/home/FAQ";
 import Feature from "@/components/home/Feature";
@@ -16,6 +17,7 @@ export default async function HomeIndex({ lang }: { lang: string }) {
   return (
     <>
       <ParallaxSection />
+      <Services />
     </>
   );
 }
