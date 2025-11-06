@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 // Declaración de tipo para dotlottie-player
 declare global {
@@ -14,6 +14,7 @@ declare global {
 export default function ParallaxSection() {
   const parallaxRef = useRef<HTMLImageElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const [isHeaderSticky, setIsHeaderSticky] = useState(false);
 
   // Cargar el script de dotlottie-player
   useEffect(() => {
@@ -25,6 +26,20 @@ export default function ParallaxSection() {
     return () => {
       document.head.removeChild(script);
     };
+  }, []);
+
+  // Detectar scroll para hacer sticky el header
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setIsHeaderSticky(true);
+      } else {
+        setIsHeaderSticky(true);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   useEffect(() => {
@@ -120,8 +135,8 @@ export default function ParallaxSection() {
 
   return (
     <div ref={containerRef} className="w-full h-screen p-3 rounded-[30px] relative">
-        <div className="absolute top-0 left-0 w-full px-5 py-5 z-20">
-            <nav className='bg-white/95 backdrop-blur-md rounded-[30px] px-4 py-3 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]'>
+        <div className={`${isHeaderSticky ? 'fixed top-0' : 'absolute top-0'} left-0 w-full px-5 py-5 z-50 transition-all duration-500 ease-in-out`}>
+            <nav className={`bg-white/95 backdrop-blur-md rounded-[30px] px-4 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] transition-all duration-300 ${isHeaderSticky ? 'py-2 shadow-2xl' : 'py-3'}`}>
             <div className="flex items-center justify-between">
                 {/* Logo */}
                 <div className="flex items-center">
