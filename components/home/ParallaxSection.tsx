@@ -310,9 +310,10 @@ export default function ParallaxSection() {
                   <div className="flex items-center">
                   <div className="bg-gradient-to-br from-gray-900 to-gray-700 p-3 rounded-2xl">
                       <img 
-                      src="/logo.svg" 
-                      alt="Henko Group Logo" 
+                      src="https://framerusercontent.com/images/jnuD1MI94Vu45n44bbJ8JUBqts.png" 
+                      alt="logo" 
                       className="h-8 w-auto"
+                      style={{ filter: 'brightness(0) invert(1)' }}
                       />
                   </div>
                   <span className="text-gray-800 text-2xl font-bold ml-2">Henko Group <span className="text-[#FFBC3F]">.</span></span>
