@@ -100,7 +100,7 @@ function HeroCarousel() {
               src={slide.image}
               alt={slide.alt}
               fill
-              className="object-cover rounded-r-[30px]"
+              className="object-cover md:rounded-r-[30px]"
               priority={index === 0}
             />
             {/* Overlay degradado */}
@@ -305,7 +305,7 @@ export default function ParallaxSection() {
       <div ref={containerRef} className="w-full h-screen p-3 rounded-[30px] relative">
           <div className={`${isHeaderSticky ? 'absolute top-0' : 'absolute top-0'} left-0 w-full px-5 py-5 z-50 transition-all duration-500 ease-in-out`}>
               <nav className={`bg-white/95 backdrop-blur-md rounded-[30px] px-4 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] transition-all duration-300 ${isHeaderSticky ? 'py-2 shadow-2xl' : 'py-3'}`}>
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between w-full">
                   {/* Logo */}
                   <div className="flex items-center">
                   <div className="bg-gradient-to-br from-gray-900 to-gray-700 p-3 rounded-2xl">
@@ -316,7 +316,7 @@ export default function ParallaxSection() {
                       style={{ filter: 'brightness(0) invert(1)' }}
                       />
                   </div>
-                  <span className="text-gray-800 text-2xl font-bold ml-2">Henko Group <span className="text-[#FFBC3F]">.</span></span>
+                  <span className="text-gray-800 text-base md:text-2xl font-bold ml-2">Henko Group <span className="text-[#FFBC3F]">.</span></span>
                   </div>
                   
                   {/* Menu Links */}
@@ -354,48 +354,47 @@ export default function ParallaxSection() {
               </div>
               </nav>
           </div>
-          <div className="grid grid-cols-2 h-full">
-              <div className="absolute -left-24 top-1/2 -translate-y-1/2 -rotate-90 origin-center z-10">
+          <div className="grid md:grid-cols-2 h-full">
+              <div className="absolute -left-24 top-1/2 -translate-y-1/2 -rotate-90 origin-center z-10 md:block hidden">
                   <p className="text-sm font-semibold tracking-[0.3em] text-gray-800 whitespace-nowrap">
                   SOLUCIONES LOGÍSTICAS GLOBALES
                   </p>
               </div>
-              <div className="relative py-20 px-16">
+              <div className="relative md:py-20 py-16 md:px-16 px-6">
           
               <div className="bg absolute h-full w-full top-0 left-0">
-                  <img className="rounded-l-[30px] h-full w-full object-cover" src="https://crowdytheme.com/html/arolax/assets/imgs/shape/img-s-52.webp" alt="image" />
+                  <img className="md:rounded-l-[30px] rounded-t-[30px] h-full w-full object-cover" src="https://crowdytheme.com/html/arolax/assets/imgs/shape/img-s-52.webp" alt="image" />
               </div>
               
               {/* Texto vertical en el lado izquierdo */}
               
               
               {/* Contenido principal del hero */}
-              <div className='flex flex-col justify-center h-full z-10 relative max-w-3xl pl-20'>
+              <div className='flex flex-col justify-center h-full z-10 relative max-w-3xl md:pl-20 md:mt-0 mt-10'>
                   {/* Título principal con badge */}
                   <div className="mb-8">
-                  <div className="flex items-start gap-5 mb-3">
-                      <h1 className="text-8xl font-black leading-[0.95] text-gray-900 tracking-tight">
-                      Tu socio
-                      </h1>
-                      
-                  </div>
-                  <h1 className="text-8xl font-black leading-[0.95] text-gray-900 tracking-tight">
-                      logístico
-                  </h1>
-                  <h1 className="text-8xl font-black leading-[0.95] text-gray-900 tracking-tight relative">
-                      líder en Chile
-                      <span className="absolute -right-2 -bottom-2 text-[#FFBC3F] text-9xl">.</span>
-                  </h1>
+                    <div className="flex items-start gap-5 mb-2">
+                        <h1 className="md:text-8xl text-5xl mb-0 font-black leading-[0.95] text-gray-900 tracking-tight">
+                          Tu socio
+                        </h1>
+                    </div>
+                    <h1 className="md:text-8xl text-5xl mb-3 font-black leading-[0.95] text-gray-900 tracking-tight">
+                        logístico
+                    </h1>
+                    <h1 className="md:text-8xl text-5xl mb-2 font-black leading-[0.95] text-gray-900 tracking-tight relative">
+                        líder en Chile
+                        <span className="absolute -right-1 -bottom-2 text-[#FFBC3F] text-9xl">.</span>
+                    </h1>
                   </div>
                   
                   {/* Subtítulo con más énfasis */}
-                  <p className="text-2xl text-gray-700 mb-10 max-w-xl leading-relaxed font-medium">
+                  <p className="text-2xl text-gray-700 mb-10 max-w-xl leading-relaxed font-medium md:block hidden">
                   Soluciones logísticas <span className="text-gray-900 font-bold">integrales</span> y <span className="text-gray-900 font-bold">personalizadas</span> que impulsan el crecimiento de tu negocio con excelencia operativa
                   </p>
                   
                   {/* Botón CTA con más impacto */}
                   <div className="mb-14">
-                  <button className="group bg-gray-900 text-white px-12 py-5 rounded-2xl font-bold text-xl hover:bg-gray-800 transition-all shadow-2xl hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.4)] hover:scale-105 flex items-center gap-4">
+                  <button className="group bg-gray-900 text-white px-12 py-5 rounded-2xl font-bold md:text-xl w-full md:w-auto text-lg hover:bg-gray-800 transition-all shadow-2xl hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.4)] hover:scale-105 flex items-center gap-4">
                       Solicitar Cotización
                       <svg className="w-6 h-6 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="3">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
@@ -405,24 +404,24 @@ export default function ParallaxSection() {
                   
                   {/* Valores clave de HENKO */}
                   <div className="grid grid-cols-3 gap-8 max-w-2xl">
-                  <div className="border-l-4 border-[#FFBC3F] pl-4">
-                      <div className="text-4xl font-black text-gray-900 leading-none mb-2">24/7</div>
-                      <div className="text-sm text-gray-600 font-medium">Operación continua</div>
-                  </div>
-                  <div className="border-l-4 border-[#FFBC3F] pl-4">
-                      <div className="text-4xl font-black text-gray-900 leading-none mb-2">100%</div>
-                      <div className="text-sm text-gray-600 font-medium">Rastreo en tiempo real</div>
-                  </div>
-                  <div className="border-l-4 border-[#FFBC3F] pl-4">
-                      <div className="text-4xl font-black text-gray-900 leading-none mb-2">+15</div>
-                      <div className="text-sm text-gray-600 font-medium">Años de experiencia</div>
-                  </div>
+                    <div className="border-l-4 border-[#FFBC3F] pl-4">
+                        <div className="md:text-4xl text-2xl font-black text-gray-900 leading-none mb-2">24/7</div>
+                        <div className="text-sm text-gray-600 font-medium">Operación continua</div>
+                    </div>
+                    <div className="border-l-4 border-[#FFBC3F] pl-4">
+                        <div className="md:text-4xl text-2xl font-black text-gray-900 leading-none mb-2">100%</div>
+                        <div className="text-sm text-gray-600 font-medium">Rastreo en tiempo real</div>
+                    </div>
+                    <div className="border-l-4 border-[#FFBC3F] pl-4">
+                        <div className="md:text-4xl text-2xl font-black text-gray-900 leading-none mb-2">+15</div>
+                        <div className="text-sm text-gray-600 font-medium">Años de experiencia</div>
+                    </div>
                   </div>
               </div>
               
               
               </div>
-              <div className="overflow-hidden rounded-r-[30px] relative">
+              <div className="overflow-hidden md:rounded-r-[30px] rounded-b-[30px] relative">
               <HeroCarousel />
               </div>
           </div>
@@ -455,7 +454,7 @@ export default function ParallaxSection() {
           </div>
       </div>
       <section>
-          <div className='flex flex-col items-center py-7 pt-16 px-5'>
+          <div className='flex flex-col items-center py-7 md:pt-36 pt-16 px-5'>
               <div className='flex items-center gap-2 flex-tag '>
                 <div className='bullet-tag'></div>
                 <div className="title-tag">Nuestros servicios</div>

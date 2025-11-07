@@ -61,7 +61,7 @@ export default async function RootLayout({
           enableSystem
         >
           {/*<Header /> */}
-          <main className="flex flex-col items-center">{children}</main>
+          <main className="flex flex-col w-full">{children}</main>
           <Footer />
           <Analytics />
           <TailwindIndicator />

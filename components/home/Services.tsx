@@ -74,7 +74,7 @@ export default function Services() {
   }, []);
 
   return (
-    <section className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section className="relative md:py-24 py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
    
 
       <div className="relative max-w-7xl mx-auto">

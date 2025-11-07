@@ -15,10 +15,17 @@ const Footer = () => {
 
   return (
     <footer className="relative bg-gradient-to-br from-gray-50 via-[#FFF8E7] to-gray-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 border-t border-gray-200 dark:border-gray-800 overflow-hidden">
+      {/* Giant Ghost Text */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
+        <h1 className="text-[20vw] md:text-[25vw] font-black text-gray-900/[0.02] dark:text-white/[0.02] leading-none tracking-tighter">
+          HENKO
+        </h1>
+      </div>
+
       {/* Decorative gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#FFBC3F]/5 to-transparent pointer-events-none"></div>
       
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 z-10">
         {/* Logo y Marca */}
         <div className="text-center mb-12">
           <Link href="/" className="inline-flex items-center gap-3 group">
