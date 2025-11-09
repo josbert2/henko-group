@@ -35,7 +35,11 @@ const config = {
         // },
         primary: {
           foreground: "#FFFFFF",
-          DEFAULT: "#3B82F6",
+          DEFAULT: "hsl(var(--primary))",
+        },
+        "primary-content": {  
+          DEFAULT: "hsl(var(--primary-content))",
+          foreground: "hsl(var(--primary-content-foreground))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -61,6 +65,7 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        
       },
       borderRadius: {
         lg: "var(--radius)",

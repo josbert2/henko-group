@@ -42,7 +42,7 @@ const Header = () => {
               />
             </div>
             <span className="text-gray-950 dark:text-gray-300 text-xl font-bold hidden md:block">
-              Henko Group<span className="text-[#FFBC3F]">.</span>
+              Henko Group<span className="text-primary">.</span>
             </span>
           </Link>
         </div>
@@ -100,7 +100,7 @@ const Header = () => {
                         />
                       </div>
                       <span className="text-xl font-bold tracking-wide text-gray-950 dark:text-gray-300">
-                        Henko Group<span className="text-[#FFBC3F]">.</span>
+                        Henko Group<span className="text-primary">.</span>
                       </span>
                     </Link>
                   </div>

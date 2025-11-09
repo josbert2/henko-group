@@ -20,7 +20,7 @@ const WebsiteCard = ({
           className="w-full h-44 object-cover rounded-lg mt-4"
         />
         <div className="py-4">
-          <div className="font-bold text-xl mb-2 whitespace-nowrap overflow-hidden text-ellipsis text-gray-900 dark:text-white">
+          <div className="font-bold text-xl mb-2 whitespace-nowrap overflow-hidden text-ellipsis text-primary-content dark:text-white">
             {title}
           </div>
           <p className="text-gray-700 dark:text-gray-300 text-base whitespace-nowrap overflow-hidden text-ellipsis">

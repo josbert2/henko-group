@@ -39,7 +39,7 @@ export default function CTASection() {
             {/* CTA Button */}
             <a
               href="/contact"
-              className="group inline-flex items-center justify-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-2xl"
+              className="group inline-flex items-center justify-center px-8 py-4 bg-primary hover:bg-primary/70 text-white font-semibold rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-2xl"
             >
               <span>Solicitar cotización</span>
               <svg

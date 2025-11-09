@@ -22,7 +22,7 @@ export default function StyleGuidePage() {
         {/* Información Corporativa */}
         <section className="mb-16 bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg">
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-3">
-            <span className="text-[#FFBC3F]">📋</span> Información Corporativa
+            <span className="text-primary">📋</span> Información Corporativa
           </h2>
           
           <div className="space-y-6">
@@ -45,13 +45,13 @@ export default function StyleGuidePage() {
             <div>
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Valores Clave</h3>
               <div className="flex flex-wrap gap-3">
-                <span className="px-4 py-2 bg-[#FFBC3F]/10 text-gray-900 dark:text-white rounded-full font-medium">
+                <span className="px-4 py-2 bg-primary/10 text-gray-900 dark:text-white rounded-full font-medium">
                   Compromiso
                 </span>
-                <span className="px-4 py-2 bg-[#FFBC3F]/10 text-gray-900 dark:text-white rounded-full font-medium">
+                <span className="px-4 py-2 bg-primary/10 text-gray-900 dark:text-white rounded-full font-medium">
                   Innovación
                 </span>
-                <span className="px-4 py-2 bg-[#FFBC3F]/10 text-gray-900 dark:text-white rounded-full font-medium">
+                <span className="px-4 py-2 bg-primary/10 text-gray-900 dark:text-white rounded-full font-medium">
                   Excelencia
                 </span>
               </div>
@@ -62,7 +62,7 @@ export default function StyleGuidePage() {
         {/* Paleta de Colores */}
         <section className="mb-16 bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg">
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-3">
-            <span className="text-[#FFBC3F]">🎨</span> Paleta de Colores
+            <span className="text-primary">🎨</span> Paleta de Colores
           </h2>
           
           <div className="space-y-8">
@@ -70,12 +70,12 @@ export default function StyleGuidePage() {
             <div>
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Color Principal - Dorado HENKO</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="bg-[#FFBC3F] rounded-2xl p-8 text-center">
+                <div className="bg-primary rounded-2xl p-8 text-center">
                   <div className="text-white font-bold text-2xl mb-2">#FFBC3F</div>
                   <div className="text-white/90 text-sm">RGB: 255, 188, 63</div>
                   <div className="text-white/90 text-sm">HSL: 45, 100%, 62%</div>
                 </div>
-                <div className="bg-[#ffbc3f2b] rounded-2xl p-8 text-center border-2 border-[#FFBC3F]">
+                <div className="bg-primary/10 rounded-2xl p-8 text-center border-2 border-primary">
                   <div className="text-gray-900 dark:text-white font-bold text-2xl mb-2">#ffbc3f2b</div>
                   <div className="text-gray-600 dark:text-gray-400 text-sm">Con transparencia</div>
                   <div className="text-gray-600 dark:text-gray-400 text-sm">Para fondos sutiles</div>

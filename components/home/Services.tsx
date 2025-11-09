@@ -74,7 +74,7 @@ export default function Services() {
   }, []);
 
   return (
-    <section className="relative md:py-24 py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section className="relative md:py-24 md:pt-10 py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
    
 
       <div className="relative max-w-7xl mx-auto">
@@ -85,9 +85,9 @@ export default function Services() {
             
             
             <div className="flex-1">
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight mb-6">
+              <h2 className="text-4xl text-center sm:text-5xl lg:text-6xl font-bold text-primary-content dark:text-white leading-tight mb-6">
                 Soluciones logísticas integrales,{' '}
-                <span className="text-[#FFBC3F]">eficientes y personalizadas.</span>
+                <span className="text-primary">eficientes y personalizadas.</span>
               </h2>
             </div>
 
@@ -133,7 +133,7 @@ export default function Services() {
               {/* Contenido */}
               <div className="relative z-10 p-8">
                 {/* Icon minimalista */}
-                <div className="w-14 h-14 mb-6 bg-[#FFBC3F] bg-opacity-20 rounded-2xl flex items-center justify-center">
+                <div className="w-14 h-14 mb-6 bg-primary bg-opacity-20 rounded-2xl flex items-center justify-center">
                   <Image
                     src={service.icon}
                     alt={`${service.title} icon`}
@@ -144,7 +144,7 @@ export default function Services() {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 leading-tight">
+                <h3 className="text-2xl font-bold text-primary-content dark:text-white mb-4 leading-tight">
                   {service.title}
                 </h3>
 
@@ -154,7 +154,7 @@ export default function Services() {
                 </p>
 
                 {/* Arrow indicator */}
-                <div className="flex items-center gap-2 text-gray-900 dark:text-white font-medium group-hover:gap-3 transition-all duration-300">
+                <div className="flex items-center gap-2 text-primary-content dark:text-white font-medium group-hover:gap-3 transition-all duration-300">
                   <span className="text-sm">Ver más</span>
                   <svg
                     className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300"
@@ -173,7 +173,7 @@ export default function Services() {
               </div>
 
               {/* Barra de acento inferior */}
-              <div className="h-1 bg-[#FFBC3F] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+              <div className="h-1 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
             </Link>
           ))}
         </div>
@@ -184,7 +184,7 @@ export default function Services() {
             Moldeamos nuestros servicios según tus{' '}
             <Link
               href="/contact"
-              className="text-[#FFBC3F] font-semibold hover:underline transition-all duration-300"
+              className="text-primary font-semibold hover:underline transition-all duration-300"
             >
               necesidades específicas.
             </Link>

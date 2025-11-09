@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import AboutSection from '@/components/home/AboutSection';
 import Image from 'next/image';
 
 // Declaración de tipo para dotlottie-player
@@ -104,7 +105,7 @@ function HeroCarousel() {
               priority={index === 0}
             />
             {/* Overlay degradado */}
-            <div className="absolute inset-0 bg-gradient-to-br from-gray-900/40 via-transparent to-[#FFBC3F]/20 rounded-r-[30px]"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-gray-900/40 via-transparent to-primary/20 rounded-r-[30px]"></div>
           </div>
         ))}
       </div>
@@ -116,7 +117,7 @@ function HeroCarousel() {
             key={`badge-${currentSlide}`}
             className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full border border-white/20 mb-6 animate-fade-in-up"
           >
-            <div className="w-2 h-2 rounded-full bg-[#FFBC3F] animate-pulse"></div>
+            <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
             <span className="text-white text-sm font-semibold tracking-wide">
               {slides[currentSlide].badge}
             </span>
@@ -127,7 +128,7 @@ function HeroCarousel() {
             style={{ animationDelay: '100ms' }}
           >
             {slides[currentSlide].title}{' '}
-            <span className="text-[#FFBC3F]">{slides[currentSlide].highlight}</span>
+            <span className="text-primary">{slides[currentSlide].highlight}</span>
           </h3>
         </div>
       </div>
@@ -162,13 +163,13 @@ function HeroCarousel() {
               {/* Barra de progreso */}
               {index === currentSlide && (
                 <div
-                  className="h-full bg-[#FFBC3F] transition-all duration-100 ease-linear rounded-full"
+                  className="h-full bg-primary transition-all duration-100 ease-linear rounded-full"
                   style={{ width: `${progress}%` }}
                 ></div>
               )}
               {/* Estado completado */}
               {index < currentSlide && (
-                <div className="h-full bg-[#FFBC3F] w-full rounded-full"></div>
+                <div className="h-full bg-primary w-full rounded-full"></div>
               )}
             </div>
           </button>
@@ -316,31 +317,36 @@ export default function ParallaxSection() {
                       style={{ filter: 'brightness(0) invert(1)' }}
                       />
                   </div>
-                  <span className="text-gray-800 text-base md:text-2xl font-bold ml-2">Henko Group <span className="text-[#FFBC3F]">.</span></span>
+                  <span className="text-gray-800 text-base md:text-2xl font-bold ml-2">Henko Group <span className="text-primary">.</span></span>
                   </div>
                   
                   {/* Menu Links */}
                   <div className="hidden md:flex items-center gap-8">
-                  <a href="#inicio" className="text-gray-800 hover:text-[#FFBC3F] transition-colors font-medium">
+                  <a href="#inicio" className="relative text-gray-800 hover:text-primary transition-colors font-medium group">
+                      <span className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 w-1.5 h-1.5 rounded-full bg-primary opacity-0 group-hover:opacity-100 group-hover:-translate-x-3 transition-all duration-300 ease-out"></span>
                       Inicio
                   </a>
-                  <a href="#nosotros" className="text-gray-800 hover:text-[#FFBC3F] transition-colors font-medium">
+                  <a href="#nosotros" className="relative text-gray-800 hover:text-primary transition-colors font-medium group">
+                      <span className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 w-1.5 h-1.5 rounded-full bg-primary opacity-0 group-hover:opacity-100 group-hover:-translate-x-3 transition-all duration-300 ease-out"></span>
                       Nosotros
                   </a>
-                  <a href="#servicios" className="text-gray-800 hover:text-[#FFBC3F] transition-colors font-medium">
+                  <a href="#servicios" className="relative text-gray-800 hover:text-primary transition-colors font-medium group">
+                      <span className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 w-1.5 h-1.5 rounded-full bg-primary opacity-0 group-hover:opacity-100 group-hover:-translate-x-3 transition-all duration-300 ease-out"></span>
                       Servicios
                   </a>
-                  <a href="#portafolio" className="text-gray-800 hover:text-[#FFBC3F] transition-colors font-medium">
+                  <a href="#portafolio" className="relative text-gray-800 hover:text-primary transition-colors font-medium group">
+                      <span className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 w-1.5 h-1.5 rounded-full bg-primary opacity-0 group-hover:opacity-100 group-hover:-translate-x-3 transition-all duration-300 ease-out"></span>
                       Portafolio
                   </a>
-                  <a href="#contacto" className="text-gray-800 hover:text-[#FFBC3F] transition-colors font-medium">
+                  <a href="#contacto" className="relative text-gray-800 hover:text-primary transition-colors font-medium group">
+                      <span className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 w-1.5 h-1.5 rounded-full bg-primary opacity-0 group-hover:opacity-100 group-hover:-translate-x-3 transition-all duration-300 ease-out"></span>
                       Contacto
                   </a>
                   </div>
                   
                   {/* CTA Button */}
                   <div className="flex items-center gap-4">
-                  <button className="hidden md:block font-bold px-6 py-2.5 bg-[#FFBC3F] text-gray-900 rounded-full hover:bg-[#ffb020] transition-all font-semibold shadow-md hover:shadow-xl hover:scale-105">
+                  <button className="hidden md:block font-bold px-6 py-2.5 bg-primary text-primary-content rounded-full hover:bg-primary transition-all font-semibold shadow-md hover:shadow-xl hover:scale-105">
                       Comenzar
                   </button>
                   
@@ -362,8 +368,9 @@ export default function ParallaxSection() {
               </div>
               <div className="relative md:py-20 py-16 md:px-16 px-6">
           
-              <div className="bg absolute h-full w-full top-0 left-0">
-                  <img className="md:rounded-l-[30px] rounded-t-[30px] h-full w-full object-cover" src="https://crowdytheme.com/html/arolax/assets/imgs/shape/img-s-52.webp" alt="image" />
+              <div className="bg absolute h-full w-full top-0 left-0 overflow-hidden">
+                <div className="md:rounded-l-[30px] md:!rounded-r-none rounded-t-[30px] h-full w-full bg-[repeating-linear-gradient(45deg,hsl(var(--primary)/0.18),hsl(var(--primary)/0.18)_4px,hsl(var(--primary)/0.06)_4px,hsl(var(--primary)/0.06)_10px)] animate-[slide_20s_linear_infinite]">
+                </div>
               </div>
               
               {/* Texto vertical en el lado izquierdo */}
@@ -374,22 +381,22 @@ export default function ParallaxSection() {
                   {/* Título principal con badge */}
                   <div className="mb-8">
                     <div className="flex items-start gap-5 mb-2">
-                        <h1 className="md:text-8xl text-5xl mb-0 font-black leading-[0.95] text-gray-900 tracking-tight">
+                        <h1 className="md:text-6xl text-5xl mb-0 font-black leading-[0.95] text-primary-content tracking-tight">
                           Tu socio
                         </h1>
                     </div>
-                    <h1 className="md:text-8xl text-5xl mb-3 font-black leading-[0.95] text-gray-900 tracking-tight">
+                    <h1 className="md:text-6xl text-5xl mb-3 font-black leading-[0.95] text-primary-content tracking-tight">
                         logístico
                     </h1>
-                    <h1 className="md:text-8xl text-5xl mb-2 font-black leading-[0.95] text-gray-900 tracking-tight relative">
+                    <h1 className="md:text-6xl text-5xl mb-2 font-black leading-[0.95] text-primary-content tracking-tight relative">
                         líder en Chile
-                        <span className="absolute -right-1 -bottom-2 text-[#FFBC3F] text-9xl">.</span>
+                        <span className="absolute -right-1 -bottom-2 text-primary text-9xl">.</span>
                     </h1>
                   </div>
                   
                   {/* Subtítulo con más énfasis */}
-                  <p className="text-2xl text-gray-700 mb-10 max-w-xl leading-relaxed font-medium md:block hidden">
-                  Soluciones logísticas <span className="text-gray-900 font-bold">integrales</span> y <span className="text-gray-900 font-bold">personalizadas</span> que impulsan el crecimiento de tu negocio con excelencia operativa
+                  <p className="text-base text-gray-700 mb-10 max-w-xl leading-relaxed font-medium md:block hidden">
+                  Soluciones logísticas <span className="text-primary-content font-bold">integrales</span> y <span className="text-primary-content font-bold">personalizadas</span> que impulsan el crecimiento de tu negocio con excelencia operativa
                   </p>
                   
                   {/* Botón CTA con más impacto */}
@@ -404,16 +411,16 @@ export default function ParallaxSection() {
                   
                   {/* Valores clave de HENKO */}
                   <div className="grid grid-cols-3 gap-8 max-w-2xl">
-                    <div className="border-l-4 border-[#FFBC3F] pl-4">
-                        <div className="md:text-4xl text-2xl font-black text-gray-900 leading-none mb-2">24/7</div>
+                    <div className="border-l-4 border-primarypl-4">
+                        <div className="md:text-4xl text-2xl font-black text-primary-content leading-none mb-2">24/7</div>
                         <div className="text-sm text-gray-600 font-medium">Operación continua</div>
                     </div>
-                    <div className="border-l-4 border-[#FFBC3F] pl-4">
-                        <div className="md:text-4xl text-2xl font-black text-gray-900 leading-none mb-2">100%</div>
+                    <div className="border-l-4 border-primary pl-4">
+                        <div className="md:text-4xl text-2xl font-black text-primary-content leading-none mb-2">100%</div>
                         <div className="text-sm text-gray-600 font-medium">Rastreo en tiempo real</div>
                     </div>
-                    <div className="border-l-4 border-[#FFBC3F] pl-4">
-                        <div className="md:text-4xl text-2xl font-black text-gray-900 leading-none mb-2">+15</div>
+                    <div className="border-l-4 border-primary pl-4">
+                        <div className="md:text-4xl text-2xl font-black text-primary-content leading-none mb-2">+15</div>
                         <div className="text-sm text-gray-600 font-medium">Años de experiencia</div>
                     </div>
                   </div>
@@ -453,10 +460,11 @@ export default function ParallaxSection() {
               </div>
           </div>
       </div>
+      <AboutSection />
       <section>
           <div className='flex flex-col items-center py-7 md:pt-36 pt-16 px-5'>
-              <div className='flex items-center gap-2 flex-tag '>
-                <div className='bullet-tag'></div>
+              <div className='flex items-center gap-2 flex-tag bg-primary/10'>
+                <div className='bullet-tag bg-primary'></div>
                 <div className="title-tag">Nuestros servicios</div>
               </div>
           </div>

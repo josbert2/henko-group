@@ -2,6 +2,7 @@ import BaiDuAnalytics from "@/app/BaiDuAnalytics";
 import GoogleAnalytics from "@/app/GoogleAnalytics";
 import { TailwindIndicator } from "@/components/TailwindIndicator";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { ThemeFromUrl } from "@/components/ThemeFromUrl";
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
 import { siteConfig } from "@/config/site";
@@ -60,6 +61,7 @@ export default async function RootLayout({
           defaultTheme={siteConfig.nextThemeColor}
           enableSystem
         >
+          <ThemeFromUrl />
           {/*<Header /> */}
           <main className="flex flex-col w-full">{children}</main>
           <Footer />

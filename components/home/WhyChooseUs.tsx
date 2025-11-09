@@ -95,7 +95,7 @@ export default function WhyChooseUs() {
                   <div className="text-8xl font-black bg-gradient-to-br from-orange-500 to-orange-600 bg-clip-text text-transparent leading-none mb-3">
                     15
                   </div>
-                  <h3 className="text-sm font-bold text-gray-900 dark:text-white leading-tight">
+                  <h3 className="text-sm font-bold text-primary-content dark:text-white leading-tight">
                     Años de experiencia en servicios logísticos
                   </h3>
                 </div>
@@ -105,9 +105,9 @@ export default function WhyChooseUs() {
 
           {/* Right: Accordion */}
           <div>
-            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-8 leading-tight">
+            <h2 className="text-4xl sm:text-5xl font-bold text-primary-content dark:text-white mb-8 leading-tight">
               ¿Por qué elegir{' '}
-              <span className="text-[#FFBC3F]">HENKO</span>{' '}
+              <span className="text-primary">HENKO</span>{' '}
               como tu socio logístico?
             </h2>
 
@@ -126,7 +126,7 @@ export default function WhyChooseUs() {
                       <div className="w-12 h-12 rounded-xl bg-gray-900 dark:bg-gray-700 flex items-center justify-center text-white flex-shrink-0">
                         {getIcon(item.icon)}
                       </div>
-                      <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+                      <h3 className="text-xl font-bold text-primary-content dark:text-white">
                         {item.title}
                       </h3>
                     </div>
@@ -135,7 +135,7 @@ export default function WhyChooseUs() {
                       openItem === item.id ? 'rotate-45' : ''
                     }`}>
                       <svg
-                        className="w-6 h-6 text-[#FFBC3F]"
+                        className="w-6 h-6 text-primary"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"

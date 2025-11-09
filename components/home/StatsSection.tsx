@@ -97,13 +97,13 @@ export default function StatsSection() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16 md:mb-20">
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-content  dark:text-white leading-tight">
             Las razones por las que <br />
             deberías{' '}
             <span className="relative inline-block">
               <span className="relative z-10">trabajar</span>
               <svg
-                className="absolute -bottom-2 left-0 w-full h-3 text-[#FFBC3F]"
+                className="absolute -bottom-2 left-0 w-full h-3 text-primary"
                 viewBox="0 0 200 12"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -139,7 +139,7 @@ export default function StatsSection() {
               <div className="relative mb-6 flex items-center justify-center">
                 {/* Number with background image */}
                 <h3 
-                  className="number-with-bg text-6xl md:text-7xl lg:text-8xl font-semibold text-gray-900 dark:text-white relative z-10 inline-block px-8 py-2"
+                  className="number-with-bg text-6xl md:text-7xl lg:text-8xl font-semibold text-primary-content dark:text-white relative z-10 inline-block px-8 py-2"
                   style={{
                     backgroundImage: 'url(https://crowdytheme.com/html/arolax/assets/imgs/shape/img-s-55.webp)',
                     backgroundSize: '100% 100%',
@@ -149,13 +149,13 @@ export default function StatsSection() {
                 >
                   {animatedNumbers[stat.id] || 0}
                   {stat.suffix && (
-                    <span className="text-[#FFBC3F]">{stat.suffix}</span>
+                    <span className="text-primary">{stat.suffix}</span>
                   )}
                 </h3>
               </div>
 
               {/* Text */}
-              <h4 className="text-base md:text-lg font-semibold text-gray-900 dark:text-white leading-snug max-w-[200px]">
+              <h4 className="text-base md:text-lg font-semibold text-primary-content dark:text-white leading-snug max-w-[200px]">
                 {stat.text}
               </h4>
             </div>
