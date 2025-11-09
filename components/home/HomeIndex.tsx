@@ -31,7 +31,7 @@ export default async function HomeIndex({ lang }: { lang: string }) {
      
       <ProcessSection />
       <WhyChooseUsAlt />
-      <Testimonials id="testimonials" locale={dict.Testimonials} />
+      {/* <Testimonials id="testimonials" locale={dict.Testimonials} /> */}
       <ContactSection />
       <CTASection />
     </>

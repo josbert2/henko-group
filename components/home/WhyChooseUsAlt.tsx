@@ -26,12 +26,12 @@ export default function WhyChooseUsAlt() {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full">
               <div className="w-2 h-2 rounded-full bg-primary"></div>
-              <span className="text-primary font-semibold text-sm">Why Choose Us</span>
+              <span className="text-primary font-semibold text-sm">Porque escogernos</span>
             </div>
 
             {/* Título */}
             <div>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-content dark:text-white leading-tight">
                 Potenciando tu{" "}
                 <span className="text-primary">Negocio</span>
               </h2>

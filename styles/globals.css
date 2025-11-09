@@ -252,7 +252,7 @@ h6 {
     margin-bottom: 70px;
 }
 .about-area .year {
-    background-color: var(--white-color);
+ 
     width: 195px;
     text-align: center;
     position: absolute;
@@ -275,7 +275,7 @@ h6 {
     height: 100%;
     right: -15px;
     bottom: -15px;
-    background-color: var(--green-color);
+    background-color: var(--primary);
     border-radius: 0 45px;
     z-index: -1;
 }
